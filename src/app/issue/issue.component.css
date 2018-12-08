@@ -1,0 +1,6 @@
+section {
+  padding: 1rem;
+}
+section>section { /* probably change to a class - selecting the title/author sections */
+  padding: 0rem;
+}
