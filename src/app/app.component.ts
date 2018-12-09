@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Issue } from './issue';
+import { User } from './user';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
 })
   export class AppComponent {
   title = 'edu-change';
-  issues = [null, null, null, null, null, null];
+  issues : Issue[] = [new Issue("Bathrooms in poor service", "Recently I've noticed the bathrooms are of poor condition and would like something to be done about it", new User("Victor Panayotov", 0, "University College Cork"))];
 }

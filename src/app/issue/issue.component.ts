@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { User } from '../user';
+import { Issue } from '../issue';
 
 @Component({
   selector: 'issue',
@@ -7,21 +9,27 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IssueComponent implements OnInit {
 
-  @Input() title : String;
-  @Input() author : String;
-  @Input() institute : String;
-  @Input() description : String;
+  @Input() issue: Issue;
+  title : string;
+  description : string;
+  author : string;
+  institute : string;
+  reputation : number;
 
   constructor() {
-    //Mockup
-    this.author = "Victor Panayotov";
-    this.institute = "University College Cork"
-    this.title = "Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|Bathrooms are in poor shape|";
-    this.description = "Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|Recently, I've noticed that the bathrooms in the university are in incredibly poor shape|"; // Use rich text?
+    this.author = "this.issue.user.name";
+    this.institute = "this.issue.user.institute";
+    this.title = "this.issue.title";
+    this.description = "this.issue.description";
+    this.reputation = 88888888;
    }
 
   ngOnInit() {
-
+    this.author = this.issue.user.name;
+    this.institute = this.issue.user.institute;
+    this.title = this.issue.title;
+    this.description = this.issue.description;
+    this.reputation = this.issue.user.reputation;
   }
 
 }
