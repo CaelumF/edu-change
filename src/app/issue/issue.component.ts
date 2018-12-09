@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'issue',
@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IssueComponent implements OnInit {
 
-  author : String;
-  title : String;
-  description : String;
+  @Input() author : String;
+  @Input() title : String;
+  @Input() description : String;
 
   constructor() {
     //Mockup
