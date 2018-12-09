@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material';
 
 //Flex-Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,7 +18,8 @@ import { IssueComponent } from './issue/issue.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
