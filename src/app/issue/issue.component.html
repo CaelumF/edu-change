@@ -1,10 +1,27 @@
-<section fxLayout="column">
-  <section fxLayout="row" fxFlex=10>
-      <h1 fxFlex=90>{{title}}</h1>
+<!-- <section fxLayout="column">
+  <section class="top" fxLayout="row" fxFlex=10>
+      <h1 fxFlex=100>{{title}}</h1>
 
-      <p>{{author}}</p>
+      <section class="topAside" fxLayout=column>
+        <p>{{author}}</p>
+        <p>{{institute}}</p>
+      </section>
   </section>
-  <section fxLayout="row" fxFlex=90>
-    <p fxFlex=90>{{description}}</p>
+  <section class="bottom" fxLayout="row" fxFlex=90>
+    <p fxFlex=100>{{description}}</p>
   </section>
+</section> -->
+
+<section fxLayout="row">
+
+  <section class="content" fxLayout="column" fxFlex=90>
+    <h1 fxFlex=50>{{title}}</h1>
+    <p fxFlex=50>{{description}}</p>
+  </section>
+  
+  <section class="aside" fxLayout="column" fxFlex=10>
+    <p>{{author}}</p>
+    <p>{{institute}}</p>
+  </section>
+  
 </section>
