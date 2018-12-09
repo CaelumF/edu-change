@@ -1,6 +1,18 @@
 section {
   padding: 1rem;
+  background-color: aqua
 }
 section>section { /* probably change to a class - selecting the title/author sections */
   padding: 0rem;
+  background-color: blueviolet
+}
+h1{
+  background-color: coral
+}
+p{
+  align-self: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: darkcyan
 }
