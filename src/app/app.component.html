@@ -1,4 +1,7 @@
 <!-- Mockup -->
-<section style="padding-left: 1rem;padding-right: 1rem">
-  <issue *ngFor="let issue of issues" style="padding: 1rem" [issue]="issue"></issue>
+<section style="padding: 1vh;">
+  <button mat-button routerLink="/issue/11">Show Sample Issue</button>
+  <router-outlet></router-outlet>
+
+  <!-- <issue *ngFor="let issue of issues" style="padding: 1rem" [issue]="issue"></issue> -->
 </section>

@@ -4,11 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
-
-//Flex-Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { IssueComponent } from './issue/issue.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,8 @@ import { IssueComponent } from './issue/issue.component';
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
