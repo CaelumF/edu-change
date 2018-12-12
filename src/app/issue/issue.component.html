@@ -1,4 +1,4 @@
-<section fxLayout="row">
+<section fxLayout="row" *ngIf="issue$ | async as issue">
 
   <section class="content" fxLayout="column" fxFlex=90>
     <h1 fxFlex=50>{{title}}</h1>
@@ -9,6 +9,5 @@
     <p>{{author}} | {{reputation}}</p>
     <p>{{institute}}</p>
     <button mat-button color="primary" routerLink="">View Post</button>
-  </section>
-  
+  </section>  
 </section>

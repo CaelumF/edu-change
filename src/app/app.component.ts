@@ -9,10 +9,4 @@ import { User } from './user';
 })
   export class AppComponent {
   title = 'edu-change';
-  issues: Issue[] = [
-    // tslint:disable-next-line:max-line-length
-    new Issue('Bathrooms in poor service', 'Recently I\'ve noticed the bathrooms are of poor condition and would like something to be done about it', new User('Victor Panayotov', 0, 'University College Cork')),
-    // tslint:disable-next-line:max-line-length
-    new Issue('Bathrooms in poor service', 'Recently I\'ve noticed the bathrooms are of poor condition and would like something to be done about it', new User('Victor Panayotov', 0, 'University College Cork')),
-  ];
 }
