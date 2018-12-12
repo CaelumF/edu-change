@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, AfterContentChecked } from '@angular/core';
 import { Issue } from '../issue';
 
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { IssueService } from '../issue.service';
 
 import { switchMap } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   templateUrl: './issue.component.html',
   styleUrls: ['./issue.component.css']
 })
-export class IssueComponent implements OnInit {
+export class IssueComponent implements OnInit, AfterContentChecked {
   issue$: Observable<Issue>;
   issue: Issue;
   title: string;
@@ -24,7 +24,6 @@ export class IssueComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private service: IssueService
   ) { }
 
@@ -34,9 +33,13 @@ export class IssueComponent implements OnInit {
       this.service.getIssue(+params.get('id')))
     );
 
-    // tslint:disable-next-line:max-line-length
-    this.issue$.subscribe(next => this.issue, error => console.log('Error with Issue Observable Subscription'), () => console.log('Issue Observer got a complete notification'));
+    this.issue$.subscribe(issue => {
+      this.issue = issue;
+    });
 
+  }
+
+  ngAfterContentChecked(): void {
     this.author = this.issue.user.name;
     this.institute = this.issue.user.institute;
     this.title = this.issue.title;
