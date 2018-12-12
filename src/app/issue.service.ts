@@ -15,8 +15,8 @@ export class IssueService {
     return of(ISSUES);
   }
   getIssue (id: number) {
-    return this.getIssues.pipe(
-      map((issues: Issue[]) => issues.find(issue => issue.id === +id))
+    return this.getIssues().pipe(
+      map((issues: Issue[]) => issues.find((issue) => issue.id === +id))
     );
   }
 }
