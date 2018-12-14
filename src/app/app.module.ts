@@ -8,11 +8,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { IssueComponent } from './issue/issue.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IssueComponent
+    IssueComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

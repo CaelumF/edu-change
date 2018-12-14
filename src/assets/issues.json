@@ -1,0 +1,35 @@
+[{
+    "11": {
+        "id": 11,
+        "title": "Bathrooms in poor service",
+        "description": "Recently I've noticed the bathrooms are of poor condition and would like something to be done about it",
+        "resolution": {
+            "id": 5,
+            "title": "We've hired new janitors",
+            "description": "Thank you for your response, we have hired new janitors to increase the amount of maintainance perfomed in the bathrooms",
+            "user": {
+                "name": "Janet Jackson", 
+                "reputation": 923, 
+                "institute": "University College Cork"
+            }
+        },
+        "user":{
+            "name": "Victor Panayotov",
+            "reputation": 9,
+            "institution": "University College Cork"
+        }
+    },
+    "12": {
+        "id": 12,
+        "title": "Mrs X comes into lectures with no clothes on",
+        "description": "Recently I've seen Mrs X come into lectures bare naked and would like something to be done about it xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Fusce aliquet lobortis libero. Nullam venenatis fermentum dolor eget porta. Integer ut commodo felis.",
+        "resolution": {
+            "id": -1
+        },
+        "user":{
+            "name": "Victor Panayotov",
+            "reputation": 9,
+            "institution": "University College Cork"
+        }
+    }
+}]

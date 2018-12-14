@@ -12,12 +12,11 @@
   </section>
 
   <section class="post" fxLayout="row" fxFlex=90>
-
     <section class="content" fxLayout="column" fxFlex=50>
       <p>{{issue.description}}</p>
     </section>
 
-    <section class="aside" fxLayout="column" fxFlex=50>
+    <section class="aside" fxLayout="column" fxFlex=50> <!-- Can get split into it's own component -->
       <ng-container *ngIf="this.resolution.id != -1; else displayResolution">
         <h2>Response:</h2>
         <h2>{{resolution.title}}</h2>
@@ -31,7 +30,6 @@
         <h2>Currently no resolution...</h2>
       </ng-template>
     </section>
-  
   </section>
 
 </section>
