@@ -13,11 +13,15 @@ import { Observable } from 'rxjs';
   templateUrl: './issue.component.html',
   styleUrls: ['./issue.component.css']
 })
-export class IssueComponent implements OnInit, AfterContentChecked {
+export class IssueComponent implements OnInit {
   issue$: Observable<Issue>;
   issue: Issue;
+
   title: string;
+
   description: string;
+  resolution = null;
+
   author: string;
   institute: string;
   reputation: number;
@@ -35,16 +39,8 @@ export class IssueComponent implements OnInit, AfterContentChecked {
 
     this.issue$.subscribe(issue => {
       this.issue = issue;
+      this.resolution = this.issue.resolution;
     });
 
   }
-
-  ngAfterContentChecked(): void {
-    this.author = this.issue.user.name;
-    this.institute = this.issue.user.institute;
-    this.title = this.issue.title;
-    this.description = this.issue.description;
-    this.reputation = this.issue.user.reputation;
-  }
-
 }

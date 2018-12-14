@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Issue } from './issue';
 import { User } from './user';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
   export class AppComponent {
-  constructor (
-    private router: Router
-  ) { }
+  constructor () { }
 
   title = 'edu-change';
 }
