@@ -1,13 +1,37 @@
-<section fxLayout="row">
+<section fxLayout="column">
 
-  <section class="content" fxLayout="column" fxFlex=90>
-    <h1 fxFlex=50>{{title}}</h1>
-    <p fxFlex=50>{{description}}</p>
+  <section class="title" fxLayout="column" fxFlex=10>
+    <section>
+      <h2>Issue:</h2>
+      <h1>{{issue.title}}</h1>
+    </section>
+    <section>
+      <p>{{issue.user.name}} | {{issue.user.reputation}}</p>
+      <p>{{issue.user.institute}}</p>
+    </section>
   </section>
 
-  <section class="aside" fxLayout="column" fxFlex=10>
-    <p>{{author}} | {{reputation}}</p>
-    <p>{{institute}}</p>
-    <button mat-button color="primary" routerLink="">View Post</button>
-  </section>  
+  <section class="post" fxLayout="row" fxFlex=90>
+
+    <section class="content" fxLayout="column" fxFlex=50>
+      <p>{{issue.description}}</p>
+    </section>
+
+    <section class="aside" fxLayout="column" fxFlex=50>
+      <ng-container *ngIf="this.resolution.id != -1; else displayResolution">
+        <h2>Response:</h2>
+        <h2>{{resolution.title}}</h2>
+        <p>{{resolution.description}}</p>
+        <section class="r-buttons" fxLayout=row fxFlexAlign="end">
+          <button mat-button>Adequate</button>
+          <button mat-button>Inadequate</button>
+        </section>
+      </ng-container>
+      <ng-template #displayResolution>
+        <h2>Currently no resolution...</h2>
+      </ng-template>
+    </section>
+  
+  </section>
+
 </section>

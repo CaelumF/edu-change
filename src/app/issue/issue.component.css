@@ -14,26 +14,52 @@
 p{
   background-color: darkcyan;
 } */
-
-.content h1 {
+.title {
+  padding: 0 1rem 0 1rem;
+  margin: 0 0 1rem 0;
+}
+.title h1 {
   margin-top: 0;
+  margin-bottom: 0;
 
-  padding-left: 1rem;
-  padding-right: 1rem;
+  font-size: 3em;
+}
+.title p {
+  margin-bottom: 0;
+  font-size: 0.8em;
+}
+
+.content {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+  background-color: lightgrey;
 }
 .content p{
+  padding: 0 1rem 0 0.5rem;
+
+  overflow-wrap: break-word;
+
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.aside {
+  margin: 0 0.5rem 0 0.5rem;
+  background-color: lightgrey;
+}
+.aside h2 {
+  margin: 0;
+  padding: 0.5rem 1rem 0 1rem;
+}
+.aside p{
   padding-left: 1rem;
   padding-right: 1rem;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  
 }
-.aside p {
-  margin-top: 0;
+.r-buttons{
+  padding: 0 0.5rem 1rem 0.5rem;
 }
-button {
-  align-self: center;
-  width: 50%;
+.r-buttons button{
+  margin-right: 0.5rem;
 }
