@@ -30,6 +30,18 @@
         <h2>Currently no resolution...</h2>
       </ng-template>
     </section>
-  </section>
 
+    
+  </section>
+  <section fxLayout="column">
+    <section fxLayout="column">
+      <h2>Post a comment:</h2>
+      <input #cauthor style="width: 25%"/>
+      <input #ccontent/>
+      <button (click)="newComment(cauthor.value, ccontent.value)" mat-button style="width: 4rem">Post</button>
+    </section>
+    <section fxLayout="column" fxLayout="column-reverse" fxLayoutAlign="start start" fxLayoutGap="gappx">
+      <comment *ngFor="let comment of comments" [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxFlex=100 fxLayout="row"></comment>
+    </section>
+  </section>
 </section>
