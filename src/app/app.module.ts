@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {IssueComponent} from './issue/issue.component';
+import {NavigatorComponent} from './navigator/navigator.component';
 import {AppRoutingModule} from './/app-routing.module';
 import {CommentComponent} from './comment/comment.component';
 import {environment} from '../environments/environment';
@@ -19,7 +20,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
   declarations: [
     AppComponent,
     IssueComponent,
-    CommentComponent
+    CommentComponent,
+    NavigatorComponent
   ],
   imports: [
     BrowserModule,
