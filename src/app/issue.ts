@@ -1,5 +1,4 @@
-import { User } from './user';
-import { Resolution } from './resolution';
+import DocumentReference = firebase.firestore.DocumentReference;
 
 export class Issue {
     constructor(
@@ -7,8 +6,8 @@ export class Issue {
         public id: number, // = -1,
         public title: string, // = null,
         public description: string, // = null,
-        public resolution: Resolution, // = null,
-        public user: User, // = null
+        public resolutions: DocumentReference[] = null,
+        public user: DocumentReference
     ) {
         // this.id = this.raw.id;
         // this.title = this.raw.title;

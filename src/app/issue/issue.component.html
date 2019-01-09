@@ -6,8 +6,8 @@
       <h1>{{issue.title}}</h1>
     </section>
     <section>
-      <p>{{issue.user.name}} | {{issue.user.reputation}}</p>
-      <p>{{issue.user.institute}}</p>
+      <p>{{author.name}} | {{author.reputation}}</p>
+      <p>{{author.institute}}</p>
     </section>
   </section>
 
@@ -17,7 +17,7 @@
     </section>
 
     <section class="aside" fxLayout="column" fxFlex=50> <!-- Can get split into it's own component -->
-      <ng-container *ngIf="this.resolution.id != -1; else displayResolution">
+      <ng-container *ngIf="this.resolution != undefined; else displayResolution">
         <h2>Response:</h2>
         <h2>{{resolution.title}}</h2>
         <p>{{resolution.description}}</p>

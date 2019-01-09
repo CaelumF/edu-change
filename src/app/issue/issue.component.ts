@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { Issue } from '../issue';
+import {Component, OnInit} from '@angular/core';
+import {Issue} from '../issue';
 
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { IssueService } from '../issue.service';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {IssueService} from '../issue.service';
 
-import { switchMap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
-import { Comment } from '../comment';
-import { User } from '../user';
+import {switchMap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
+import {Comment} from '../comment';
+import {User} from '../user';
+import {DocumentSnapshot} from '@angular/fire/firestore';
+import {Resolution} from '../resolution';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -15,6 +17,7 @@ import { User } from '../user';
   templateUrl: './issue.component.html',
   styleUrls: ['./issue.component.css']
 })
+
 export class IssueComponent implements OnInit {
   issue$: Observable<Issue>;
   issue: Issue;
@@ -24,26 +27,30 @@ export class IssueComponent implements OnInit {
   title: string;
 
   description: string;
-  resolution = null;
-
-  author: string;
-  institute: string;
-  reputation: number;
+  resolution: Resolution;
+  author: User;
 
   constructor(
     private route: ActivatedRoute,
-    private service: IssueService
-  ) { }
+    private service: IssueService,
+  ) {
+  }
 
   ngOnInit() {
     this.issue$ = this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-      this.service.getIssue(+params.get('id')))
+        this.service.getIssue(+params.get('id')))
     );
 
     this.issue$.subscribe(issue => {
       this.issue = issue;
-      this.resolution = this.issue.resolution;
+      // this.resolution = issue.resolution[0].get().then()
+      issue.user.get().then((author: DocumentSnapshot<User>) => {
+        this.author = author.data();
+      });
+      issue.resolutions[0].get().then((resolution: DocumentSnapshot<Resolution>) => {
+        this.resolution = resolution.data();
+      });
     });
   }
 

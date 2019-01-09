@@ -1,17 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-import { Issue } from './issue';
-import { Observable, of } from 'rxjs';
-import { ISSUES } from 'src/assets/issues';
-import { map } from 'rxjs/operators';
-
-import { } from '../assets/issues';
+import {Issue} from './issue';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IssueService {
-  constructor() { }
+  constructor(private db: AngularFirestore) { }
   request: XMLHttpRequest = new XMLHttpRequest;
   getIssues (): Observable<Issue[]> {
     // const ISSUES: Issue[] = [];
@@ -22,8 +20,7 @@ export class IssueService {
     // raw.forEach(element => {
     //   console.log(element.valueOf("description"));
     // });
-
-    return of(ISSUES);
+    return this.db.collection<Issue>('issues').valueChanges();
   }
   getIssue (id: number) {
     return this.getIssues().pipe(
