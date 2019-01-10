@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material';
+import {MatButtonModule, MatIcon, MatIconModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {IssueComponent} from './issue/issue.component';
@@ -15,13 +15,15 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { NavRouteComponent } from './navigator/nav-route/nav-route.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IssueComponent,
     CommentComponent,
-    NavigatorComponent
+    NavigatorComponent,
+    NavRouteComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     FlexLayoutModule,
     MatButtonModule,
     AppRoutingModule,
+    MatIconModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
