@@ -1,0 +1,10 @@
+#home-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+#home-container .mat-card {
+  flex-grow: 1;
+  margin: 1rem;
+}
