@@ -1,15 +1,20 @@
 
 <div id="root-container">
+  <nav id="logo">
+    <app-nav-route>
+      <img src="../../assets/images/university.png">
+    </app-nav-route>
+  </nav>
   <nav id="l-nav">
-
+    <app-nav-route>
+      <mat-icon >home</mat-icon>
+    </app-nav-route>
   </nav>
   <nav id="t-nav" >
-
   </nav>
   <main>
     <ng-content></ng-content>
     <router-outlet></router-outlet>
-
   </main>
 
 </div>
