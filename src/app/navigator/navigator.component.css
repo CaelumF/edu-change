@@ -1,0 +1,28 @@
+#root-container
+{
+  display: grid;
+
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+  grid-template-columns: 8rem auto;
+  grid-template-rows: 6rem auto 8rem;
+  grid-template-areas: "t-nav t-nav"
+                       "l-nav content"
+                       "l-nav footer";
+}
+
+#root-container nav#l-nav{
+  grid-area: l-nav;
+  background-color: aquamarine;
+}
+#root-container nav#t-nav{
+  grid-area: t-nav;
+  background-color: aquamarine;
+}
+
+#root-container main {
+  grid-area: content;
+}

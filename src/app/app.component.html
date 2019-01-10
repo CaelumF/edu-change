@@ -1,11 +1,12 @@
 <!-- Mockup -->
 <section style="padding: 1vh;">
-  
-  <button mat-button routerLink="issue/11">Show Sample Issue 1</button>
-  <div *ngFor="let issue of issues | async">
-    <button mat-button  routerLink="issue/{{issue.id}}">Show Sample Issue 2</button>
-  </div>
-  <app-navigator></app-navigator>
-  <router-outlet></router-outlet>
+
+  <app-navigator>
+
+    <div *ngFor="let issue of issues | async">
+      <button mat-button  routerLink="issue/{{issue.id}}">Show Sample Issue 2</button>
+    </div>
+
+  </app-navigator>
    <!--<issue *ngFor="let issue of issues" style="padding: 1rem" [issue]="issue"></issue>-->
 </section>
