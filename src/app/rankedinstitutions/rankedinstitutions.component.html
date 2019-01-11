@@ -1,0 +1,7 @@
+<div id="#ranked-institutions-container">
+  <mat-card *ngFor="let institution of institutions | async">
+    <mat-card-title>
+      {{institution.name}}
+    </mat-card-title>
+  </mat-card>
+</div>

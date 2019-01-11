@@ -1,7 +1,6 @@
 #root-container
 {
   display: grid;
-
   height: 100vh;
   width: 100vw;
   left: 0;
@@ -13,9 +12,11 @@
                        "l-nav content"
                        "l-nav footer";
 }
+
 #root-container nav{
   display: flex;
 }
+
 
 #root-container nav#logo {
   position: relative;
@@ -23,11 +24,13 @@
   grid-area: tl-nav;
   background-color: aquamarine;
 }
+
 #root-container .mat-icon {
   width: 3rem !important;
   height: 3rem !important;
   font-size: 3rem;
 }
+
 #root-container nav#logo img {
   max-width: 100%;
   max-height: 100%;
@@ -40,6 +43,7 @@
   align-items: center;
   background-color: aquamarine;
 }
+
 #root-container nav#t-nav{
   flex-direction: row;
   grid-area: t-nav;
@@ -48,4 +52,5 @@
 
 #root-container main {
   grid-area: content;
+  margin-left: 1rem;
 }
