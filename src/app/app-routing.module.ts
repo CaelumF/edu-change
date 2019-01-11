@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { IssueComponent } from './issue/issue.component';
 import { RouterModule, Routes } from '@angular/router';
+import {HomeComponent} from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'issue/:id', component: IssueComponent },
-  { path: '**', redirectTo: '' }
+  { path: 'home/', component: HomeComponent },
+  { path: '', redirectTo: 'home/', pathMatch: 'full'},
+  // { path: '**', redirectTo: 'home/' }
 ];
 
 @NgModule({
