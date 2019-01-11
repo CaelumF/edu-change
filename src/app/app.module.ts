@@ -17,6 +17,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { NavRouteComponent } from './navigator/nav-route/nav-route.component';
 import { HomeComponent } from './home/home.component';
+import { RankedinstitutionsComponent } from './rankedinstitutions/rankedinstitutions.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     CommentComponent,
     NavigatorComponent,
     NavRouteComponent,
-    HomeComponent
+    HomeComponent,
+    RankedinstitutionsComponent
   ],
   imports: [
     BrowserModule,
