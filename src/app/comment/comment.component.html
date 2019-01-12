@@ -1,3 +1,11 @@
-<p>{{user.name}} | {{user.reputation}}</p>
-<p>{{user.institute}}</p>
-<p>{{content}}</p>
+<mat-card fxFlex=100>
+    <mat-card-content>
+        <mat-card-content fxFlex=90>
+            {{content}}
+        </mat-card-content>
+        <mat-card>
+            <mat-card-subtitle class=author>{{user.name}} | {{user.reputation}}</mat-card-subtitle>
+            <mat-card-subtitle>{{user.institute}}</mat-card-subtitle>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

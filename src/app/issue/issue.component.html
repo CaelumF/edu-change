@@ -1,5 +1,4 @@
 <section fxLayout="column">
-
   <mat-card>
     <mat-card-title>Issue:</mat-card-title>
     <mat-card-title>{{issue.title}}</mat-card-title>
@@ -7,9 +6,6 @@
     <mat-card-subtitle>{{author.institute}}</mat-card-subtitle>
     <mat-card-content>
       <section class="post" fxLayout="row">
-        <!-- <section class="content" fxLayout="column" fxFlex=50>
-          <p>{{issue.description}}</p>
-        </section> -->
         <mat-card class=content fxFlex=50>
           <mat-card-content>{{issue.description}}</mat-card-content>
         </mat-card>
@@ -22,9 +18,10 @@
               <mat-card-content>
                 {{resolution.description}}
               </mat-card-content>
-              <mat-card-actions>
-                <button mat-raised-button>Adequate</button>
-                <button mat-raised-button>Inadequate</button>
+              <mat-card-actions fxLayout=row>
+                <button mat-raised-button (click)="upvoteAdequacy()">Adequate</button>
+                <button mat-raised-button (click)="downvoteAdequacy()">Inadequate</button>
+                <mat-card-content class=res-rating>Rating: {{resolution.rating}}</mat-card-content>
               </mat-card-actions>
             </mat-card>
           </ng-container>
@@ -35,16 +32,17 @@
       </section>
     </mat-card-content>
   </mat-card>
+</section>
 
+<section fxLayout="column">
   <section fxLayout="column">
-    <section fxLayout="column">
-      <h2>Post a comment:</h2>
-      <input #cauthor style="width: 25%"/>
-      <input #ccontent/>
-      <button (click)="newComment(cauthor.value, ccontent.value)" mat-button style="width: 4rem">Post</button>
-    </section>
-    <section fxLayout="column" fxLayout="column-reverse" fxLayoutAlign="start start" fxLayoutGap="gappx">
-      <comment *ngFor="let comment of comments" [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxFlex=100 fxLayout="row"></comment>
-    </section>
+    <h2 class=mat-card-title>Post a comment:</h2>
+    <input #cauthor style="width: 25%"/>
+    <input #ccontent/>
+    <button (click)="newComment(cauthor.value, ccontent.value)" mat-raised-button style="width: 4rem">Post</button>
+  </section>
+  <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
+    <comment *ngFor="let comment of comments" 
+    [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxLayout="row"></comment>
   </section>
 </section>
