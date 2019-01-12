@@ -38,11 +38,11 @@
   <section fxLayout="column">
     <h2 class=mat-card-title>Post a comment:</h2>
     <input #cauthor style="width: 25%"/>
-    <input #ccontent/>
+    <input #ccontent style="width: 90%"/>
     <button (click)="newComment(cauthor.value, ccontent.value)" mat-raised-button style="width: 4rem">Post</button>
   </section>
   <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
-    <comment *ngFor="let comment of comments" 
+    <comment *ngFor="let comment of comments"
     [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxLayout="row"></comment>
   </section>
 </section>
