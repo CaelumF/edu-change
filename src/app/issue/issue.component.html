@@ -1,38 +1,41 @@
 <section fxLayout="column">
 
-  <section class="title" fxLayout="column" fxFlex=10>
-    <section>
-      <h2>Issue:</h2>
-      <h1>{{issue.title}}</h1>
-    </section>
-    <section>
-      <p>{{author.name}} | {{author.reputation}}</p>
-      <p>{{author.institute}}</p>
-    </section>
-  </section>
-
-  <section class="post" fxLayout="row" fxFlex=90>
-    <section class="content" fxLayout="column" fxFlex=50>
-      <p>{{issue.description}}</p>
-    </section>
-
-    <section class="aside" fxLayout="column" fxFlex=50> <!-- Can get split into it's own component -->
-      <ng-container *ngIf="this.resolution != undefined; else displayResolution">
-        <h2>Response:</h2>
-        <h2>{{resolution.title}}</h2>
-        <p>{{resolution.description}}</p>
-        <section class="r-buttons" fxLayout=row fxFlexAlign="end">
-          <button mat-button>Adequate</button>
-          <button mat-button>Inadequate</button>
+  <mat-card>
+    <mat-card-title>Issue:</mat-card-title>
+    <mat-card-title>{{issue.title}}</mat-card-title>
+    <mat-card-subtitle>{{author.name}} | {{author.reputation}}</mat-card-subtitle>
+    <mat-card-subtitle>{{author.institute}}</mat-card-subtitle>
+    <mat-card-content>
+      <section class="post" fxLayout="row">
+        <!-- <section class="content" fxLayout="column" fxFlex=50>
+          <p>{{issue.description}}</p>
+        </section> -->
+        <mat-card class=content fxFlex=50>
+          <mat-card-content>{{issue.description}}</mat-card-content>
+        </mat-card>
+        <section class="aside" fxLayout="column" fxFlex=50> <!-- Can get split into it's own component -->
+          <ng-container *ngIf="this.resolution != undefined; else displayResolution">
+            <mat-card>
+              <mat-card-title>Response:</mat-card-title>
+              <mat-card-title>{{resolution.title}}</mat-card-title>
+              <mat-card-subtitle></mat-card-subtitle> <!-- For author / institute, etc. -->
+              <mat-card-content>
+                {{resolution.description}}
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button>Adequate</button>
+                <button mat-raised-button>Inadequate</button>
+              </mat-card-actions>
+            </mat-card>
+          </ng-container>
+          <ng-template #displayResolution>
+            <h2>Currently no resolution...</h2>
+          </ng-template>
         </section>
-      </ng-container>
-      <ng-template #displayResolution>
-        <h2>Currently no resolution...</h2>
-      </ng-template>
-    </section>
+      </section>
+    </mat-card-content>
+  </mat-card>
 
-    
-  </section>
   <section fxLayout="column">
     <section fxLayout="column">
       <h2>Post a comment:</h2>

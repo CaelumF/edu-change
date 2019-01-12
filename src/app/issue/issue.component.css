@@ -32,8 +32,8 @@ p{
 .content {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-
-  background-color: lightgrey;
+/* 
+  background-color: lightgrey; */
 }
 .content p{
   padding: 0 1rem 0 0.5rem;
@@ -47,7 +47,7 @@ p{
 
 .aside {
   margin: 0 0.5rem 0 0.5rem;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
 }
 .aside h2 {
   margin: 0;
