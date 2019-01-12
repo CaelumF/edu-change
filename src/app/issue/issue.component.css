@@ -57,9 +57,12 @@ p{
   padding-left: 1rem;
   padding-right: 1rem;
 }
-.r-buttons{
+.res-buttons{
   padding: 0 0.5rem 1rem 0.5rem;
 }
-.r-buttons button{
+.res-buttons button{
   margin-right: 0.5rem;
+}
+.res-rating{
+  margin-top: 1rem;
 }

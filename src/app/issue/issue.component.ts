@@ -58,4 +58,13 @@ export class IssueComponent implements OnInit {
     console.log(author, content);
     this.comments.push(new Comment(new User(author, 0, 'University Placeholder'), 0, content));
   }
+
+  // Would like to get the database to update when this value changes
+  upvoteAdequacy() {
+    this.resolution.rating++;
+  }
+
+  downvoteAdequacy() {
+    this.resolution.rating--;
+  }
 }
