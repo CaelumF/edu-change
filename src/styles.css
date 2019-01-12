@@ -2,3 +2,15 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.mat-card {
+  background-color: #f0f8ff;
+}
+.mat-card .mat-card {
+  background-color: #e3f2ff;
+}
+.mat-card .mat-card .mat-card {
+  background-color: #dbeeff;
+}
+/* /* s */
