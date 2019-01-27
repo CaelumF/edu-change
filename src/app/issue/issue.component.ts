@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Issue} from '../issue';
 
 import {ActivatedRoute, ParamMap} from '@angular/router';
@@ -69,6 +69,6 @@ export class IssueComponent implements OnInit {
   }
   newChallenge(author: string, content: string) {
     console.log(author, content);
-    this.challenges.push(new Challenge(new User(author, 0, 'University Placeholder'), 0, content)));
+    this.challenges.push(new Challenge(new User(author, 0, 'University Placeholder'), 0, content));
   }
 }
