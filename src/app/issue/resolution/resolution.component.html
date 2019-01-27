@@ -1,0 +1,23 @@
+<section fxLayout="column">
+  <ng-container *ngIf="this.resolution != undefined; else displayResolution">
+    <mat-card>
+      <mat-card-title>Resolution:</mat-card-title>
+      <mat-card-title>{{resolution.title}}</mat-card-title>
+      <mat-card-subtitle>{{resAuthor.name}} | {{resAuthor.institute}}</mat-card-subtitle> <!-- For author / institute, etc. -->
+      <mat-card-content>
+        {{resolution.description}}
+      </mat-card-content>
+      <mat-card-actions fxLayout=row>
+        <section fxLayout="row" fxFlex=100>
+          <button mat-raised-button (click)="upvoteAdequacy()">Adequate</button>
+          <button mat-raised-button (click)="downvoteAdequacy()">Inadequate</button>
+          <mat-card-content class=rating>Rating: {{resolution.rating}}</mat-card-content>
+        </section>
+        <mat-card-content class=show-more>Show more</mat-card-content>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>
+  <ng-template #displayResolution>
+    <h2>Currently no resolution...</h2>
+  </ng-template>
+</section>

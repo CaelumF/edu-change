@@ -1,4 +1,5 @@
 import DocumentReference = firebase.firestore.DocumentReference;
+import * as firebase from 'firebase';
 
 export class Issue {
     constructor(
