@@ -18,6 +18,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { NavRouteComponent } from './navigator/nav-route/nav-route.component';
 import { HomeComponent } from './home/home.component';
 import { RankedinstitutionsComponent } from './rankedinstitutions/rankedinstitutions.component';
+import { ResolutionComponent } from './issue/resolution/resolution.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RankedinstitutionsComponent } from './rankedinstitutions/rankedinstitut
     NavigatorComponent,
     NavRouteComponent,
     HomeComponent,
-    RankedinstitutionsComponent
+    RankedinstitutionsComponent,
+    ResolutionComponent
   ],
   imports: [
     BrowserModule,
