@@ -6,7 +6,7 @@ export class Resolution {
         public id: number = -1,
         public title: string = null,
         public description: string = null,
-        public rating: number,
+        public rating: number = 0,
         public user: DocumentReference = null
     ) { }
 }
