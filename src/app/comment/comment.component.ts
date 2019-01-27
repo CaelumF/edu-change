@@ -19,4 +19,11 @@ export class CommentComponent implements OnInit {
 
   }
 
+  upvote() {
+    this.rating++;
+  }
+  downvote() {
+    this.rating--;
+  }
+
 }

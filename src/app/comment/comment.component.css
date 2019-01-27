@@ -1,3 +1,6 @@
 .author {
     white-space: nowrap;
 }
+.rating{
+  align-items: center;
+}
