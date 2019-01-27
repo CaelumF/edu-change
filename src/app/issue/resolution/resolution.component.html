@@ -1,5 +1,5 @@
 <section fxLayout="column">
-  <ng-container *ngIf="this.resolution != undefined; else displayResolution">
+  <ng-container>
     <mat-card>
       <mat-card-title>Resolution:</mat-card-title>
       <mat-card-title>{{resolution.title}}</mat-card-title>
@@ -17,7 +17,4 @@
       </mat-card-actions>
     </mat-card>
   </ng-container>
-  <ng-template #displayResolution>
-    <h2>Currently no resolution...</h2>
-  </ng-template>
 </section>

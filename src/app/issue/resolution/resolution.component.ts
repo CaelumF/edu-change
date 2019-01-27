@@ -8,8 +8,8 @@ import { User } from 'src/app/user';
   styleUrls: ['./resolution.component.css']
 })
 export class ResolutionComponent implements OnInit {
-  @Input() resolution: Resolution;
-  @Input() resAuthor: User;
+  @Input() resolution: Resolution = new Resolution();
+  @Input() resAuthor: User = new User();
 
   constructor() { }
 

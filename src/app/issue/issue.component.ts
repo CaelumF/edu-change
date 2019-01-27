@@ -27,7 +27,7 @@ export class IssueComponent implements OnInit {
   title: string;
 
   description: string;
-  resolution: Resolution;
+  resolution: Resolution = new Resolution();
   author: User;
   resAuthor: User;
 

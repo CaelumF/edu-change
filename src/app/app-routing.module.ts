@@ -8,6 +8,7 @@ import {RankedinstitutionsComponent} from './rankedinstitutions/rankedinstitutio
 
 const appRoutes: Routes = [
   { path: 'issue/:id', component: IssueComponent },
+  { path: 'issues/:id', redirectTo: 'issue/:id' },
   { path: 'home', component: HomeComponent },
   { path: 'global', component: RankedinstitutionsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
