@@ -10,6 +10,7 @@ import {Comment} from '../comment';
 import {User} from '../user';
 import {DocumentSnapshot} from '@angular/fire/firestore';
 import {Resolution} from '../resolution';
+import { Challenge } from '../challenge';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -23,6 +24,7 @@ export class IssueComponent implements OnInit {
   issue: Issue = new Issue();
 
   comments: Comment[] = [];
+  challenges: Challenge[] = [];
 
   title: string;
 
@@ -64,5 +66,9 @@ export class IssueComponent implements OnInit {
   newComment(author: string, content: string) {
     console.log(author, content);
     this.comments.push(new Comment(new User(author, 0, 'University Placeholder'), 0, content));
+  }
+  newChallenge(author: string, content: string) {
+    console.log(author, content);
+    this.challenges.push(new Challenge(new User(author, 0, 'University Placeholder'), 0, content)));
   }
 }

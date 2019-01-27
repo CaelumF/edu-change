@@ -19,16 +19,29 @@
     </mat-card-content>
   </mat-card>
 </section>
-
-<section fxLayout="column">
-  <section fxLayout="column">
-    <h2 class=mat-card-title>Post a comment:</h2>
-    <input #cauthor style="width: 25%"/>
-    <input #ccontent style="width: 90%"/>
-    <button (click)="newComment(cauthor.value, ccontent.value)" mat-raised-button style="width: 4rem">Post</button>
+<section fxLayout="row">
+  <section fxLayout="column" fxFlex=100>
+    <section fxLayout="column">
+      <h2 class=mat-card-title>Post a comment:</h2>
+      <input #commentAuthor style="width: 25%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
+      <input #commentContent style="width: 90%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
+      <button (click)="newComment(commentAuthor.value, commentContent.value)" mat-raised-button style="width: 4rem">Post</button>
+    </section>
+    <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
+      <comment *ngFor="let comment of comments"
+      [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxLayout="row"></comment>
+    </section>
   </section>
-  <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
-    <comment *ngFor="let comment of comments"
-    [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxLayout="row"></comment>
+  <section fxLayout="column" fxFlex=100>
+    <section fxLayout="column">
+      <h2 class=mat-card-title>Post a challenge:</h2>
+      <input #challengeAuthor style="width: 25%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
+      <input #challengeContent style="width: 90%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
+      <button (click)="newChallenge(challengeAuthor.value, challengeContent.value)" mat-raised-button style="width: 4rem">Post</button>
+    </section>
+    <section fxFlex=100 fxLayout="column" fxLayoutGap="gappx">
+        <comment *ngFor="let challenge of challenges"
+        [user]="challenge.user" [rating]="challenge.rating" [content]="challenge.content" fxLayout="row"></comment>
+      </section>
   </section>
 </section>
