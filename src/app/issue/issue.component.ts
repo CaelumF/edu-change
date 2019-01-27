@@ -20,7 +20,7 @@ import {Resolution} from '../resolution';
 
 export class IssueComponent implements OnInit {
   issue$: Observable<Issue>;
-  issue: Issue;
+  issue: Issue = new Issue();
 
   comments: Comment[] = [];
 
@@ -28,8 +28,8 @@ export class IssueComponent implements OnInit {
 
   description: string;
   resolution: Resolution = new Resolution();
-  author: User;
-  resAuthor: User;
+  author: User = new User();
+  resAuthor: User = new User();
 
   constructor(
     private route: ActivatedRoute,
