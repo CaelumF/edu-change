@@ -1,6 +1,6 @@
 <section fxLayout="column">
+  <h1 class=mat-card-title>Issue:</h1>
   <mat-card>
-    <mat-card-title>Issue:</mat-card-title>
     <mat-card-title>{{issue.title}}</mat-card-title>
     <ng-container *ngIf="this.author.name != null">
       <mat-card-subtitle>{{author.name}} | {{author.reputation}}</mat-card-subtitle>
@@ -19,12 +19,13 @@
     </mat-card-content>
   </mat-card>
 </section>
+
 <section fxLayout="row">
-  <section fxLayout="column" fxFlex=100>
+  <section fxLayout="column" fxFlex=100> <!-- Comment -->
     <section fxLayout="column">
       <h2 class=mat-card-title>Post a comment:</h2>
-      <input #commentAuthor style="width: 25%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
-      <input #commentContent style="width: 90%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
+      <input #commentAuthor style="width: 25%" (keyup.enter)="newComment(commentAuthor.value, commentContent.value)"/>
+      <input #commentContent style="width: 90%" (keyup.enter)="newComment(commentAuthor.value, commentContent.value)"/>
       <button (click)="newComment(commentAuthor.value, commentContent.value)" mat-raised-button style="width: 4rem">Post</button>
     </section>
     <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
@@ -32,7 +33,8 @@
       [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxLayout="row"></comment>
     </section>
   </section>
-  <section fxLayout="column" fxFlex=100>
+
+  <section fxLayout="column" fxFlex=100> <!-- Challenge (Can create it's own component) -->
     <section fxLayout="column">
       <h2 class=mat-card-title>Post a challenge:</h2>
       <input #challengeAuthor style="width: 25%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
