@@ -1,9 +1,18 @@
 <mat-card fxFlex=100>
     <mat-card-content>
-        <mat-card-content fxFlex=90>
-          <section>
-            <mat-icon svgIcon="expand_less"></mat-icon>
-            <mat-icon svgIcon="expand_more"></mat-icon>
+        <mat-card-content fxLayout="row" fxFlex=90>
+          <section fxLayout="column" class="rating">
+            <button (click)="upvote()">
+              <i class="material-icons">
+                expand_less
+              </i>
+            </button>
+            <p>{{rating}}</p>
+            <button (click)="downvote()">
+              <i class="material-icons">
+                expand_more
+              </i>
+            </button>
           </section>
           {{content}}
         </mat-card-content>
