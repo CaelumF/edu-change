@@ -2,8 +2,11 @@
   <mat-card>
     <mat-card-title>Issue:</mat-card-title>
     <mat-card-title>{{issue.title}}</mat-card-title>
-    <mat-card-subtitle>{{author.name}} | {{author.reputation}}</mat-card-subtitle>
-    <mat-card-subtitle>{{author.institute}}</mat-card-subtitle>
+    <ng-container *ngIf="this.author.name != null">
+      <mat-card-subtitle>{{author.name}} | {{author.reputation}}</mat-card-subtitle>
+      <mat-card-subtitle>{{author.institute}}</mat-card-subtitle>
+    </ng-container>
+
     <mat-card-content>
       <section class="post" fxLayout="row">
         <mat-card class=content fxFlex=100>
