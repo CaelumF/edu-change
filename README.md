@@ -1,7 +1,7 @@
 # Links
 
 [Trello](https://trello.com/b/pS4hy32F) - For non-code related tasks
-
+[Initial concept](https://www.mindmeister.com/maps/public_map_shell/1188006260/edu-change?width=600&height=400&z=auto&t=20wnaR6osb&live_update=1)
 # edu-change
 Provide reputation incentive for universities to take and respond to feedback
 
