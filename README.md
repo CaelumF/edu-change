@@ -10,11 +10,17 @@ Provide reputation incentive for universities to take and respond to feedback
 
 ## Run
 0. (First time) `npm install`
-1. `npm start`
-2. Wait for it to fail (Do not stop the `npm start`)
-2. Save any .ts file
+1. Create a new file in `src/environments` called `keys.ts` with the following template:
+    ```ts
+    export const keys = {
+        apiKey: '<API_KEY>',
+    }
+    ```
+2. `npm start`
+3. Wait for it to fail (Do not stop the `npm start`)
+4. Save any .ts file
 
 It will then re-compile (will get stuck at 68%-70%, just wait) and will be viewable on http://localhost:4200
 
 ## Contributors
-----Add your names here
+[Eric Moynihan](https://github.com/TooFiveFive)
