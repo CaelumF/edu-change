@@ -22,5 +22,6 @@ Provide reputation incentive for universities to take and respond to feedback
 
 It will then re-compile (will get stuck at 68%-70%, just wait) and will be viewable on http://localhost:4200
 
-## Contributors
+## Contributors (alphabetical)
+[Caelum Forder](https://github.com/CaelumF)
 [Eric Moynihan](https://github.com/TooFiveFive)
