@@ -24,4 +24,5 @@ It will then re-compile (will get stuck at 68%-70%, just wait) and will be viewa
 
 ## Contributors (alphabetical)
 [Caelum Forder](https://github.com/CaelumF)
+
 [Eric Moynihan](https://github.com/TooFiveFive)
