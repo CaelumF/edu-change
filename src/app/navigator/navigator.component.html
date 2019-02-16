@@ -4,19 +4,19 @@
     <mat-drawer #drawer mode="side">
       <nav id="l-nav">
         <app-nav-route>
-          <button mat-raised-button routerLink="home/">
+          <button mat-button routerLink="home/">
             <mat-icon>home</mat-icon>
           </button>
         </app-nav-route>
 
         <app-nav-route>
-          <button mat-raised-button routerLink="global/">
+          <button mat-button routerLink="global/">
             <mat-icon>blur_circular</mat-icon>
           </button>
         </app-nav-route>
 
         <app-nav-route>
-          <button mat-raised-button routerLink="local/">
+          <button mat-button routerLink="local/">
             <mat-icon>map</mat-icon>
           </button>
         </app-nav-route>
@@ -30,7 +30,7 @@
           <nav id="logo">
             <app-nav-route>
               <mat-icon (click)="drawer.toggle()">menu</mat-icon>
-              <img src="../../assets/images/university.png">
+              <mat-icon >local_library</mat-icon>
 
             </app-nav-route>
           </nav>

@@ -21,12 +21,17 @@
   height: 100vh;
 }
 
+mat-drawer {
+  background: #e91e63;
+}
 
 #root-container nav#logo {
   position: relative;
   justify-content: left;
   grid-area: tl-nav;
-  background-color: aquamarine;
+  background-color: #e91e63;
+  padding-left: 1em;
+  color: white;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -50,13 +55,14 @@
   flex-direction: column;
   grid-area: l-nav;
   align-items: center;
-  background-color: aquamarine;
+  background-color: transparent;
+  color: #fff;
 }
 
 #root-container nav#t-nav{
   flex-direction: row;
   grid-area: t-nav;
-  background-color: aquamarine;
+  background-color: #e91e63;
 }
 
 #root-container main {
