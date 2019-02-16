@@ -23,6 +23,11 @@
   justify-content: center;
   grid-area: tl-nav;
   background-color: aquamarine;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
 #root-container .mat-icon {
