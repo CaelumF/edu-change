@@ -16,11 +16,15 @@
 #root-container nav{
   display: flex;
 }
+#container {
+  width: 100vw;
+  height: 100vh;
+}
 
 
 #root-container nav#logo {
   position: relative;
-  justify-content: center;
+  justify-content: left;
   grid-area: tl-nav;
   background-color: aquamarine;
     -moz-user-select: none;
@@ -57,5 +61,5 @@
 
 #root-container main {
   grid-area: content;
-  margin-left: 1rem;
 }
+

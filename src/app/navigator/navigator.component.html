@@ -1,35 +1,44 @@
 
 <div id="root-container">
-  <nav id="logo">
-    <app-nav-route>
-      <img src="../../assets/images/university.png">
-    </app-nav-route>
-  </nav>
-  <nav id="l-nav">
-    <app-nav-route>
-      <button mat-raised-button routerLink="home/">
-        <mat-icon>home</mat-icon>
-      </button>
-    </app-nav-route>
+  <mat-drawer-container hasBackdrop="false" id="container">
+    <mat-drawer #drawer mode="side">
+      <nav id="l-nav">
+        <app-nav-route>
+          <button mat-raised-button routerLink="home/">
+            <mat-icon>home</mat-icon>
+          </button>
+        </app-nav-route>
 
-    <app-nav-route>
-      <button mat-raised-button routerLink="global/">
-        <mat-icon>blur_circular</mat-icon>
-      </button>
-    </app-nav-route>
+        <app-nav-route>
+          <button mat-raised-button routerLink="global/">
+            <mat-icon>blur_circular</mat-icon>
+          </button>
+        </app-nav-route>
 
-    <app-nav-route>
-      <button mat-raised-button routerLink="local/">
-        <mat-icon>map</mat-icon>
-      </button>
-    </app-nav-route>
+        <app-nav-route>
+          <button mat-raised-button routerLink="local/">
+            <mat-icon>map</mat-icon>
+          </button>
+        </app-nav-route>
+      </nav>
+      <nav id="t-nav" >
+      </nav>
+    </mat-drawer>
 
-  </nav>
-  <nav id="t-nav" >
-  </nav>
-  <main>
-    <ng-content></ng-content>
-    <router-outlet></router-outlet>
-  </main>
+    <mat-drawer-content>
+      <main>
+          <nav id="logo">
+            <app-nav-route>
+              <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+              <img src="../../assets/images/university.png">
+
+            </app-nav-route>
+          </nav>
+
+          <ng-content></ng-content>
+          <router-outlet></router-outlet>
+        </main>
+    </mat-drawer-content>
+  </mat-drawer-container>
 
 </div>

@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatIcon, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIcon, MatIconModule, MatDrawer, MatSidenavModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {IssueComponent} from './issue/issue.component';
@@ -39,6 +39,7 @@ import { ResolutionComponent } from './issue/resolution/resolution.component';
     AppRoutingModule,
     MatIconModule,
     MatCardModule,
+    MatSidenavModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
