@@ -64,6 +64,9 @@ mat-drawer {
   grid-area: t-nav;
   background-color: #e91e63;
 }
+.click {
+  cursor: pointer;
+}
 
 #root-container main {
   grid-area: content;
