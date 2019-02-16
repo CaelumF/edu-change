@@ -30,7 +30,7 @@ p{
 }
 
 .content {
-  margin-left: 0.5rem;
+  margin-left: 0;
   margin-right: 0.5rem;
 /*
   background-color: lightgrey; */
@@ -56,13 +56,4 @@ p{
 .aside p{
   padding-left: 1rem;
   padding-right: 1rem;
-}
-.res-buttons{
-  padding: 0 0.5rem 1rem 0.5rem;
-}
-.res-buttons button{
-  margin-right: 0.5rem;
-}
-.res-rating{
-  margin-top: 1rem;
 }

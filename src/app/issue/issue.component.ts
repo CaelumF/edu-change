@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Issue} from '../issue';
 
 import {ActivatedRoute, ParamMap} from '@angular/router';
@@ -10,6 +10,7 @@ import {Comment} from '../comment';
 import {User} from '../user';
 import {DocumentSnapshot} from '@angular/fire/firestore';
 import {Resolution} from '../resolution';
+import { Challenge } from '../challenge';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -20,15 +21,17 @@ import {Resolution} from '../resolution';
 
 export class IssueComponent implements OnInit {
   issue$: Observable<Issue>;
-  issue: Issue;
+  issue: Issue = new Issue();
 
   comments: Comment[] = [];
+  challenges: Challenge[] = [];
 
   title: string;
 
   description: string;
-  resolution: Resolution;
-  author: User;
+  resolution: Resolution = new Resolution();
+  author: User = new User();
+  resAuthor: User = new User();
 
   constructor(
     private route: ActivatedRoute,
@@ -44,12 +47,18 @@ export class IssueComponent implements OnInit {
 
     this.issue$.subscribe(issue => {
       this.issue = issue;
-      // this.resolution = issue.resolution[0].get().then()
+
       issue.user.get().then((author: DocumentSnapshot<User>) => {
         this.author = author.data();
       });
+
       issue.resolutions[0].get().then((resolution: DocumentSnapshot<Resolution>) => {
-        this.resolution = resolution.data();
+        const data = resolution.data();
+        this.resolution = data;
+
+        data.user.get().then((author: DocumentSnapshot<User>, self= this) => {
+          self.resAuthor = author.data();
+        });
       });
     });
   }
@@ -58,13 +67,8 @@ export class IssueComponent implements OnInit {
     console.log(author, content);
     this.comments.push(new Comment(new User(author, 0, 'University Placeholder'), 0, content));
   }
-
-  // Would like to get the database to update when this value changes
-  upvoteAdequacy() {
-    this.resolution.rating++;
-  }
-
-  downvoteAdequacy() {
-    this.resolution.rating--;
+  newChallenge(author: string, content: string) {
+    console.log(author, content);
+    this.challenges.push(new Challenge(new User(author, 0, 'University Placeholder'), 0, content));
   }
 }
