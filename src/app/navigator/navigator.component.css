@@ -72,3 +72,6 @@ mat-drawer {
   grid-area: content;
 }
 
+.cdk-focused {
+  background-color: #e2014c;
+}
