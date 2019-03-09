@@ -29,9 +29,7 @@ export class IssueComponent implements OnInit {
   title: string;
 
   description: string;
-  resolution: Resolution = new Resolution();
   author: User = new User();
-  resAuthor: User = new User();
 
   constructor(
     private route: ActivatedRoute,
@@ -52,14 +50,14 @@ export class IssueComponent implements OnInit {
         this.author = author.data();
       });
 
-      issue.resolutions[0].get().then((resolution: DocumentSnapshot<Resolution>) => {
-        const data = resolution.data();
-        this.resolution = data;
+      // issue.resolutions[0].get().then((resolution: DocumentSnapshot<Resolution>) => {
+      //   const data = resolution.data();
+      //   this.resolution = data;
 
-        data.user.get().then((author: DocumentSnapshot<User>, self= this) => {
-          self.resAuthor = author.data();
-        });
-      });
+      //   data.user.get().then((author: DocumentSnapshot<User>, self= this) => {
+      //     self.resAuthor = author.data();
+      //   });
+      // });
     });
   }
 
