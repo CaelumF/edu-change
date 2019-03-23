@@ -25,7 +25,6 @@ export class ResolutionComponent implements OnInit {
     this.resAuthor = await this.resolution.user.get().then((snapshot) => {
       return snapshot.data();
     });
-    console.log(this.resAuthor);
     this.display = true;
   }
 
