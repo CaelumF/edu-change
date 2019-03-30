@@ -1,0 +1,37 @@
+<form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+  <mat-label>Issue title:
+    <input matInput required type=text formControlName="title"/>
+  </mat-label>
+  <br>
+  <mat-label>Description of issue:
+    <input matInput type=text formControlName="description"/>
+  </mat-label>
+  <br>
+  <mat-label>
+    Resolution criteria:
+    <input matInput type=text formControlName="criteria"/>
+  </mat-label>
+  <br>
+  <mat-label>
+    Severity:
+    <mat-form-field>
+      <mat-select fxFlex=10 formControlName="severity" fxFlex=100>
+        <mat-option [value]="'high'">High</mat-option>
+        <mat-option [value]="'medium'">Medium</mat-option>
+        <mat-option [value]="'low'">Low</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-label>
+  <mat-label>
+    Severity:
+    <mat-form-field>
+      <mat-select fxFlex=10 formControlName="category" fxFlex=100>
+        <mat-option [value]="1">Category 1</mat-option>
+        <mat-option [value]="2">Category 2</mat-option>
+        <mat-option [value]="3">Category 3</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-label>
+  <br>
+  <button mat-button type="submit">Submit</button>
+</form>

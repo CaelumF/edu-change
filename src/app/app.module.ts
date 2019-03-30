@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatIcon, MatIconModule, MatDrawer, MatSidenavModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatIcon, MatIconModule, MatDrawer, MatSidenavModule, MatSelectModule, MatFormFieldModule, MatOptionModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {IssueComponent} from './issue/issue.component';
@@ -19,6 +19,9 @@ import { NavRouteComponent } from './navigator/nav-route/nav-route.component';
 import { HomeComponent } from './home/home.component';
 import { RankedinstitutionsComponent } from './rankedinstitutions/rankedinstitutions.component';
 import { ResolutionComponent } from './issue/resolution/resolution.component';
+import { IssueSubmitComponent } from './issue/issue-submit/issue-submit.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { ResolutionComponent } from './issue/resolution/resolution.component';
     NavRouteComponent,
     HomeComponent,
     RankedinstitutionsComponent,
-    ResolutionComponent
+    ResolutionComponent,
+    IssueSubmitComponent
   ],
   imports: [
     BrowserModule,
@@ -40,10 +44,14 @@ import { ResolutionComponent } from './issue/resolution/resolution.component';
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

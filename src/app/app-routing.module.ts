@@ -1,3 +1,4 @@
+import { IssueSubmitComponent } from './issue/issue-submit/issue-submit.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -7,6 +8,7 @@ import {HomeComponent} from './home/home.component';
 import {RankedinstitutionsComponent} from './rankedinstitutions/rankedinstitutions.component';
 
 const appRoutes: Routes = [
+  { path: 'issue/submit', component: IssueSubmitComponent },
   { path: 'issue/:id', component: IssueComponent },
   { path: 'issues/:id', redirectTo: 'issue/:id' },
   { path: 'home', component: HomeComponent },
