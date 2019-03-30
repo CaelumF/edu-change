@@ -10,13 +10,10 @@ import {AngularFirestore} from '@angular/fire/firestore';
 })
 export class IssueService {
   constructor(private db: AngularFirestore) { }
-  getIssues (): Observable<Issue[]> {
-    return this.db.collection<Issue>('issues').valueChanges();
-  }
 
-  getIssue (id: number) {
-    return this.getIssues().pipe(
-      map((issues: Issue[]) => issues.find((issue) => issue.id === +id))
+  public getIssue (id: number): Observable<Issue> {
+    return this.db.collection<Issue>('issues', ref => ref.where('id', '==', id)).valueChanges().pipe(
+      map(issues => issues[0])
     );
   }
 }
