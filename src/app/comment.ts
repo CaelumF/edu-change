@@ -1,9 +1,11 @@
-import { User } from './user';
+import { DocumentReference } from '@angular/fire/firestore';
 
 export class Comment {
     constructor(
-        public user: User,
-        public rating: number,
-        public content: string
+        public body: string,
+        public index: number,
+        public issue: number,
+        public score: number,
+        public user: DocumentReference
     ) {}
 }
