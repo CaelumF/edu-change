@@ -35,3 +35,6 @@
   <br>
   <button mat-button type="submit">Submit</button>
 </form>
+<firebase-ui
+    (signInSuccessWithAuthResult)="successCallback($event)"
+    (signInFailure)="errorCallback($event)"></firebase-ui>

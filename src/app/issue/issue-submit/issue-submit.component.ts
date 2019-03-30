@@ -35,4 +35,11 @@ export class IssueSubmitComponent implements OnInit {
     const resolutions = [];
     this.service.updateIssues({id, title, description, resolutions, user});
   }
+
+  successCallback(event) {
+    console.log('Success!');
+  }
+  errorCallback(event) {
+    console.log('Error');
+  }
 }
