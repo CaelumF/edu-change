@@ -1,8 +1,5 @@
 import { SubmissionService } from './../../submission.service';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Issue } from './../../issue';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
