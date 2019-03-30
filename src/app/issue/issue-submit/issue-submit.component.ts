@@ -2,6 +2,7 @@ import { SubmissionService } from './../../submission.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { FirebaseUISignInSuccessWithAuthResult, FirebaseUISignInFailure } from 'firebaseui-angular';
 
 @Component({
   selector: 'app-issue-submit',
@@ -33,10 +34,10 @@ export class IssueSubmitComponent implements OnInit {
     this.service.updateIssues({id, title, description, resolutions, user});
   }
 
-  successCallback(event) {
+  successCallback(successData: FirebaseUISignInSuccessWithAuthResult) {
     console.log('Success!');
   }
-  errorCallback(event) {
+  errorCallback(errorData: FirebaseUISignInFailure) {
     console.log('Error');
   }
 }
