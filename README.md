@@ -26,3 +26,5 @@ It will then re-compile (will get stuck at 68%-70%, just wait) and will be viewa
 [Caelum Forder](https://github.com/CaelumF)
 
 [Eric Moynihan](https://github.com/TooFiveFive)
+
++ Others who don't want to write their names 
