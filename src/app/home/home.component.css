@@ -7,10 +7,10 @@
 
 }
 #home-container .mat-card {
-flex-grow: 1;
- flex-wrap: wrap;
+  flex-grow: 1;
+  flex-wrap: wrap;
   flex-basis:25%;
-    margin: 1rem;
-   margin-right: auto;
-   max-width: 400px;
+  margin: 1rem;
+  margin-right: auto;
+  max-width: 400px;
 }

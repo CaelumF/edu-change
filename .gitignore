@@ -40,3 +40,6 @@ Thumbs.db
 
 # Api keys
 src/environments/keys.ts
+
+# Intellij Settings
+edu-change.iml
