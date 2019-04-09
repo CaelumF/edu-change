@@ -12,7 +12,7 @@
         <mat-card class=content fxFlex=100>
           <mat-card-content>{{issue.description}}</mat-card-content>
         </mat-card>
-        <app-resolution class="aside" fxFlex=100></app-resolution>
+        <app-resolution *ngIf="this.resID" [id]="this.resID" class="aside" fxFlex=100></app-resolution>
       </section>
     </mat-card-content>
   </mat-card>

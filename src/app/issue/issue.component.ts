@@ -26,6 +26,8 @@ export class IssueComponent implements OnInit {
   comments: Comment[] = [];
   challenges: Challenge[] = [];
 
+  resID: string;
+
   title: string;
 
   description: string;
@@ -50,6 +52,7 @@ export class IssueComponent implements OnInit {
         this.author = author.data();
       });
 
+      this.resID = issue.resolutions[0].id;
       // issue.resolutions[0].get().then((resolution: DocumentSnapshot<Resolution>) => {
       //   const data = resolution.data();
       //   this.resolution = data;

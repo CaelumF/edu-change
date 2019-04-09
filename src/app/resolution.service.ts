@@ -10,11 +10,9 @@ export class ResolutionService {
   constructor(private db: AngularFirestore) { }
 
   // Gets first resolution to match id
-  getResolution(id: number) {
-    const query = this.db.collection<Resolution>('resolutions', ref => ref.where('id', '==', id));
-    return query.get().toPromise().then((snapshot) => {
-      return snapshot.docs[0];
-    });
+  getResolution(id: string) {
+    const resolution = this.db.collection('resolutions').doc(id);
+    return resolution.get().toPromise().then((snapshot) => snapshot);
   }
 
   updateResolution (resolution: DocumentReference, data: any) {
