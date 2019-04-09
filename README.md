@@ -17,12 +17,12 @@ Provide reputation incentive for universities to take and respond to feedback
     }
     ```
 2. `npm start`
-3. Wait for it to fail (Do not stop the `npm start`)
-4. Save any .ts file
 
-It will then re-compile (will get stuck at 68%-70%, just wait) and will be viewable on http://localhost:4200
+It will then be viewable on http://localhost:4200
 
 ## Contributors (alphabetical)
 [Caelum Forder](https://github.com/CaelumF)
 
 [Eric Moynihan](https://github.com/TooFiveFive)
+
++ Others who don't want to write their names 

@@ -4,19 +4,21 @@ import {Issue} from './issue';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {AngularFirestore} from '@angular/fire/firestore';
+import { Comment } from './comment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IssueService {
   constructor(private db: AngularFirestore) { }
-  getIssues (): Observable<Issue[]> {
-    return this.db.collection<Issue>('issues').valueChanges();
+
+  public getIssue (id: number): Observable<Issue> {
+    return this.db.collection<Issue>('issues', ref => ref.where('id', '==', id)).valueChanges().pipe(
+      map(issues => issues[0])
+    );
   }
 
-  getIssue (id: number) {
-    return this.getIssues().pipe(
-      map((issues: Issue[]) => issues.find((issue) => issue.id === +id))
-    );
+  public getComments(issueId: number): Observable<Comment[]> {
+    return this.db.collection<Comment>('comments', ref => ref.where('issue', '==', issueId)).valueChanges();
   }
 }

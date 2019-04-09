@@ -53,6 +53,12 @@ export class IssueComponent implements OnInit {
       });
 
       this.resID = issue.resolutions[0].id;
+      
+      this.service.getComments(this.issue.id).subscribe(comments => {
+        this.comments = comments;
+      });
+      console.log(this.comments, this.issue);
+
       // issue.resolutions[0].get().then((resolution: DocumentSnapshot<Resolution>) => {
       //   const data = resolution.data();
       //   this.resolution = data;
@@ -66,7 +72,7 @@ export class IssueComponent implements OnInit {
 
   newComment(author: string, content: string) {
     console.log(author, content);
-    this.comments.push(new Comment(new User(author, 0, 'University Placeholder'), 0, content));
+    // this.comments.push(new Comment(new User(author, 0, 'University Placeholder'), 0, content));
   }
   newChallenge(author: string, content: string) {
     console.log(author, content);

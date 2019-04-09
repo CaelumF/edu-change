@@ -28,7 +28,7 @@
     </section>
     <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
       <comment *ngFor="let comment of comments"
-      [user]="comment.user" [rating]="comment.rating" [content]="comment.content" fxLayout="row"></comment>
+      [user]="comment.user" [rating]="comment.score" [content]="comment.body" fxLayout="row"></comment>
     </section>
   </section>
 
