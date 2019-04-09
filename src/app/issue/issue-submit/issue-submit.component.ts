@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FirebaseUISignInSuccessWithAuthResult, FirebaseUISignInFailure } from 'firebaseui-angular';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-issue-submit',
@@ -17,12 +18,28 @@ export class IssueSubmitComponent implements OnInit {
     severity: new FormControl(''),
     category: new FormControl('')
   });
+  uid: string;
 
   constructor(
-    private service: SubmissionService
+    private service: SubmissionService,
+    private afAuth: AngularFireAuth
   ) { }
 
   ngOnInit() {
+    this.afAuth.authState.subscribe((user) => {
+      try {
+        this.uid = user.uid;
+      } catch (error) {
+        console.log('User not logged in!');
+      }
+      console.log(user.uid);
+    }, (error) => {
+      console.log('AuthState error:', error);
+    });
+  }
+
+  signOut() {
+    this.afAuth.auth.signOut();
   }
 
   async onSubmit() {
@@ -35,9 +52,9 @@ export class IssueSubmitComponent implements OnInit {
   }
 
   successCallback(successData: FirebaseUISignInSuccessWithAuthResult) {
-    console.log('Success!');
+    console.log('Success!', successData.authResult);
   }
   errorCallback(errorData: FirebaseUISignInFailure) {
-    console.log('Error');
+    console.log('Error', errorData);
   }
 }

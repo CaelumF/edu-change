@@ -12,7 +12,7 @@ export class SubmissionService {
     return collection.ref;
   }
 
-  getUsersRef(){
+  getUsersRef() {
     const collection = this.db.collection('users');
     return collection.ref;
   }
