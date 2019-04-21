@@ -10,6 +10,7 @@ import { ResolutionService } from 'src/app/resolution.service';
   styleUrls: ['./resolution.component.css']
 })
 export class ResolutionComponent implements OnInit {
+  @Input() id: string;
   resolution$: any;
   resolution: Resolution;
   resAuthor: any;
@@ -20,12 +21,11 @@ export class ResolutionComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
-    this.resolution$ = await this.service.getResolution(5);
+    this.resolution$ = await this.service.getResolution(this.id);
     this.resolution = this.resolution$.data();
     this.resAuthor = await this.resolution.user.get().then((snapshot) => {
       return snapshot.data();
     });
-    this.display = true;
   }
 
   // Would like to get the database to update when this value changes
