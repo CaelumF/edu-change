@@ -9,8 +9,37 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    #load {
+      margin-left: -2em;
+      font-size: 3em;
+      margin-top: -1em;
+      left: 50%;
+      top: 50%;
+      font-family: 'Roboto';
+      position: fixed;
+      display: block;
+    }
+    #load::after {
+      content: "[ ]";
+      color: #000;;
+      animation: loader 1s infinite;
+      position: relative;
+      width: 42px;
+      display: inline-block;
+      bottom: 5px;
+      color: #e91e63;
+    }
+    @keyframes loader {
+      0% { transform: rotateY(0deg) rotateX(0deg); }
+      50% { transform: rotateY(180deg) rotateX(10deg); }
+      100% { transform: rotateY(360deg) rotateX(0deg); }
+    }
+  </style>
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root><div id="load">
+    Loading
+  </div></app-root>
 </body>
 </html>

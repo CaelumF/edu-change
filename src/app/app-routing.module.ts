@@ -1,3 +1,4 @@
+import { IssueSubmitComponent } from './issue/issue-submit/issue-submit.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -8,6 +9,7 @@ import {RankedinstitutionsComponent} from './rankedinstitutions/rankedinstitutio
 import {Error404Component } from './error404/error404.component';
 
 const appRoutes: Routes = [
+  { path: 'issue/submit', component: IssueSubmitComponent },
   { path: 'issue/:id', component: IssueComponent },
   { path: 'issues/:id', redirectTo: 'issue/:id' },
   { path: 'home', component: HomeComponent },
