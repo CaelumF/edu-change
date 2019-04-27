@@ -1,0 +1,12 @@
+#404notfound{
+
+
+}
+#404notfound .mat-card {
+flex grow:1;
+flex-wrap: wrap;
+margin: 1rem;
+margin-right:auto;
+flex-basis: 50%;
+
+}

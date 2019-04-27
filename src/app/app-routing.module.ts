@@ -5,6 +5,7 @@ import { IssueComponent } from './issue/issue.component';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {RankedinstitutionsComponent} from './rankedinstitutions/rankedinstitutions.component';
+import {Error404Component } from './error404/error404.component';
 
 const appRoutes: Routes = [
   { path: 'issue/:id', component: IssueComponent },
@@ -12,7 +13,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'global', component: RankedinstitutionsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: '**', redirectTo: '/home' }
+  { path: '**', component: Error404Component }
 ];
 
 @NgModule({

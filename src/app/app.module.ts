@@ -19,6 +19,7 @@ import { NavRouteComponent } from './navigator/nav-route/nav-route.component';
 import { HomeComponent } from './home/home.component';
 import { RankedinstitutionsComponent } from './rankedinstitutions/rankedinstitutions.component';
 import { ResolutionComponent } from './issue/resolution/resolution.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ResolutionComponent } from './issue/resolution/resolution.component';
     NavRouteComponent,
     HomeComponent,
     RankedinstitutionsComponent,
-    ResolutionComponent
+    ResolutionComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
