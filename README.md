@@ -1,3 +1,6 @@
+# Archived
+New repo and org: https://github.com/fixiversity/fixiversity/
+
 # edu-change
 Provide reputation incentive for universities to take and respond to feedback
 
